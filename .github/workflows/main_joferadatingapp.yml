@@ -2,7 +2,9 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy ASP.Net Core app to Azure Web App - joferadatingapp
-
+defaults:
+  run:
+    working-directory: ./API
 on:
   push:
     branches:
