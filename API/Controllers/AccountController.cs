@@ -43,7 +43,7 @@ namespace API.Controllers
 
         private async Task<bool> UserExists(string username)
         {
-            return await _dataContext.Users.AnyAsync(x => x.UserName.Equals(username, System.StringComparison.CurrentCultureIgnoreCase));
+            return await _dataContext.Users.AnyAsync(x => x.UserName.ToLower() == username.ToLower());
         }
     }
 }
