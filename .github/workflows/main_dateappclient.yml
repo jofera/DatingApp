@@ -32,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: node-app
-        path: .
+        path: ./client/dist/client
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
       with:
         app-name: 'dateappclient'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9b76aa5690de43a6b943790a6c2fb028 }}
-        package: ./client/dist/client
+        package: .
