@@ -2,7 +2,9 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Node.js app to Azure Web App - dateappclient
-
+defaults:
+  run:
+    working-directory: client
 on:
   push:
     branches:
@@ -51,6 +53,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'dateappclient'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9b76aa5690de43a6b943790a6c2fb028 }}
-        package: .
+        package: ./client/dist/client
