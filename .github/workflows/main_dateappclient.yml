@@ -53,6 +53,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'dateappclient'
-        slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9d2e860dac1941cf84fdd5c1e84a8d2e }}
         package: ./client/dist/client
