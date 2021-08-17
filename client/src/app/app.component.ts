@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'The dating app';
   users: any;
+  baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit {
   }
 
   getUsers(){
-    this.http.get('https://localhost:5001/api/users/').subscribe(response => {
+    this.http.get(this.baseUrl + 'users/').subscribe(response => {
       this.users = response;
     }, error => {
       console.log(error);
