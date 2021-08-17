@@ -9,22 +9,14 @@ import { environment } from 'src/environments/environment';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
-  users: any;
-  baseUrl = environment.baseUrl;
 
-
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getUsers();
   }
 
   registerToggle(){
     this.registerMode = !this.registerMode;
-  }
-
-  getUsers(){
-    this.http.get(this.baseUrl + 'users').subscribe(users => this.users = users);
   }
 
   cancelRegisterMode(event: boolean){
