@@ -14,10 +14,9 @@ export class AppComponent implements OnInit {
   users: any;
   baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient, private accountService: AccountService) {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit() {
-    this.getUsers();
     this.setCurrentUser();
   }
 
@@ -28,11 +27,4 @@ export class AppComponent implements OnInit {
     }
   }
 
-  getUsers(){
-    this.http.get(this.baseUrl + 'users/').subscribe(response => {
-      this.users = response;
-    }, error => {
-      console.log(error);
-    })
-  }
 }
