@@ -46,7 +46,7 @@ namespace API
 
             app.UseRouting();
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200").WithOrigins("https://dateappclient.azurewebsites.net/");
 
             app.UseAuthentication();
 
