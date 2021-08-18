@@ -54,3 +54,11 @@ jobs:
         app-name: 'dateappclient'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9b76aa5690de43a6b943790a6c2fb028 }}
         package: .
+        
+    - name: Azure Blob Storage Upload
+      uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+      with:
+        connection_string: ${{ secrets.AZUREBLOBSTORAGE_CONNECTIONSTRING }}
+        container_name: $web
+        source_dir: .
+        sync: true
