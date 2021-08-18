@@ -41,7 +41,7 @@ namespace API
 
             app.UseRouting();
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200", "https://dateappclient.azurewebsites.net"));
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200", "https://dateappclient.azurewebsites.net", "https://datingappclient.z6.web.core.windows.net"));
 
             app.UseAuthentication();
 
