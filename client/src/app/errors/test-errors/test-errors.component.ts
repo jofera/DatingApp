@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class TestErrorsComponent implements OnInit {
 
   baseUrl = environment.baseUrl;
+  validationErrors: string[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -52,7 +53,7 @@ export class TestErrorsComponent implements OnInit {
     this.http.post(this.baseUrl + 'account/register', {}).subscribe(response => {
       console.log(response);
     }, error => {
-      console.log(error);
+      this.validationErrors = error;
     });
   }
 }
